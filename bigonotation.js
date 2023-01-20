@@ -39,15 +39,31 @@
 // // Total Big O is O(n)
 // countUpAndDown(6)
 
-function printAllPairs(n) {
-  for (var i = 0; i < n; i++) {
-    // BIGO is O(n)
-    for (var j = 0; j < n; j++) {
-      // BIGO is O(n)
-      console.log(i, j);
-    }
+// function printAllPairs(n) {
+//   for (var i = 0; i < n; i++) {
+//     // BIGO is O(n)
+//     for (var j = 0; j < n; j++) {
+//       // BIGO is O(n)
+//       console.log(i, j);
+//     }
+//   }
+// }
+
+// // Total Big O is O(n * n) = O(n2)
+// console.log(printAllPairs(6));
+
+function logAtLeast5(n) {
+  for (var i = 1; i <= Math.max(5,n); i++) {
+    //the code runs till n if n is greater than 5.
+    //means the BIG O is O(n)
+    console.log(i)
   }
 }
 
-// Total Big O is O(n * n) = O(n2)
-console.log(printAllPairs(6));
+function logAtMostt5(n) {
+    for (var i = 1; i <= Math.min(5,n); i++) {
+      //the code runs till 5 even if n becomes 10000.
+      //means the BIG O is O(1)
+      console.log(i)
+    }
+  }
