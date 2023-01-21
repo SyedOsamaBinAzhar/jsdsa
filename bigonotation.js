@@ -52,18 +52,49 @@
 // // Total Big O is O(n * n) = O(n2)
 // console.log(printAllPairs(6));
 
-function logAtLeast5(n) {
-  for (var i = 1; i <= Math.max(5,n); i++) {
-    //the code runs till n if n is greater than 5.
-    //means the BIG O is O(n)
-    console.log(i)
+// function logAtLeast5(n) {
+//   for (var i = 1; i <= Math.max(5,n); i++) {
+//     //the code runs till n if n is greater than 5.
+//     //means the BIG O is O(n)
+//     console.log(i)
+//   }
+// }
+
+// function logAtMostt5(n) {
+//     for (var i = 1; i <= Math.min(5,n); i++) {
+//       //the code runs till 5 even if n becomes 10000.
+//       //means the BIG O is O(1)
+//       console.log(i)
+//     }
+//   }
+
+function sum(arr) {
+  //we're not gonna include arr in space complexity because arr is an input.
+  //space complexity for total is constant
+  let total = 0;
+  //space complexity for i is constant
+  for (let i = 1; i <= arr.length; i++) {
+    total += sum[i];
   }
+  return total;
 }
 
-function logAtMostt5(n) {
-    for (var i = 1; i <= Math.min(5,n); i++) {
-      //the code runs till 5 even if n becomes 10000.
-      //means the BIG O is O(1)
-      console.log(i)
-    }
+//so, total space complexity is O(n)
+
+function doubleArr(arr) {
+  //we're not gonna include arr in space complexity because arr is an input.
+  let newArr = [];
+  //space complexity for i is constant
+  for (let i = 1; i <= arr.length; i++) {
+    //we are allocation new memory locations for newArr[i] -> so the space complexity increases.
+    newArr.push(2 * arr[i]);
+    // the space complexity would be O(n+1) = O(n)
   }
+  return newArr;
+}
+
+let instructor = {
+  firstName: "osama",
+  isInstructor: true,
+  favoriteNumbers: [1, 2, 3, 4],
+};
