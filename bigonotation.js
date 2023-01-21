@@ -93,8 +93,72 @@ function doubleArr(arr) {
   return newArr;
 }
 
-let instructor = {
-  firstName: "osama",
-  isInstructor: true,
-  favoriteNumbers: [1, 2, 3, 4],
+// let instructor = {
+//   firstName: "osama",
+//   isInstructor: true,
+//   favoriteNumbers: [1, 2, 3, 4],
+// };
+
+// Frequency counter pattern
+// QUESTION
+//given two strings write a function to determine if the second string is the anagram of the first, an anagram is a word,phase
+//or name forming by rearranging the letters of another such as cinema -> iceman
+
+//ANSWER
+
+//now solving this by using devise the plan
+// 1. Do you understand the problem? Yes
+// 2. input types? two strings
+// 3. output type? boolean
+// 4. Enough inputs to solve the problem? Yes
+// 5. sample inputs and outputs?
+// validAnagram('','')  -> returns true
+// validAnagram('aaz','zza')  -> returns false
+// validAnagram('rat','car')  -> returns false
+// validAnagram('anagram','nagaram')  -> returns true
+// validAnagram('qwerty','qeywrt')  -> returns true
+
+// 6. Breaking problem in to parts.
+// SOLUTION:1
+
+// 1. write a function named validAnagram which takes two strings as an argument
+const validAnagram = (str1, str2) => {
+  // 2. convert the strings into an array
+  let arr1 = [...str1];
+  let arr2 = [...str2];
+
+  // 3. iterate on arr1 and then iterate on arr2 and check if the arr2 contains arr1[i]
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr2.includes(arr1[i])) {
+      // console.log())
+      // 4. if arr2 contains the value then get the index of the value
+      let index = arr2.indexOf(arr1[i]);
+      // 5. remove the element from arr2 which is found
+      arr2.splice(index, 1);
+    }
+  }
+  // 6. if length of arr2 is not equal to zero that means that arr2 has elements left after removing every element that
+  // was present in arr1 -> that proves not an anagram
+  if (arr2.length !== 0) {
+    return false;
+  } else {
+    // 7. if length of arr2 is equal to zero that means that arr2 has no elements left after removing every element that
+    // was present in arr1 -> that proves an anagram
+    return true;
+  }
 };
+
+//8.  call the function and pass strings to it.
+console.log(validAnagram("ab", "aba"));
+
+
+//Analyzing the SOLUTION 1:
+// 1. Poor Time complexity: O(N square) because of for loop and indexOf method inside for loop -> O(n*n)
+// 2. created arrays which occupies more space.
+// 3. for loop can be replaced with forEach/for in loop to improve the syntax
+// 4. if else 'blocks' can be removed.
+// 5. maybe frequency counter approach can be used to solve the problem.
+
+
+
+
