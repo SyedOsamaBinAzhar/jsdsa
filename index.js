@@ -29,9 +29,42 @@ const validAnagram = (str1, str2) => {
 
 console.log(validAnagram("rat", "car"));
 
-//Analyzing the SOLUTION 2:
+// Analyzing the SOLUTION 2:
 // 1. Time complexity improved: O(N) because of 3 loop -> O(N + N + N)
 // 2. arrays replaced with objects
 // 3. for loop replaced with for in and for of loop.
 // 4. if else 'blocks' removed.
 // 5. Hence frequency counter approach provides a better solution.
+
+
+
+function sumZero(arr){
+    for(let i = 0; i < arr.length; i++){
+        for(let j = i+1; j < arr.length; j++){
+            if(arr[i] + arr[j] === 0){
+                return [arr[i], arr[j]];
+            }
+        }
+    }
+}
+
+
+console.log(sumZero([-4,-3,-2,-1,0,1,2,5]))
+// TIME COMPLEXITY: O(Nsquare)
+// SPACE COMPLEXITY: O(1)
+
+
+function sumZero(arr){
+    let left = 0;
+    let right = arr.length - 1;
+    while(left<right){
+        let sum = arr[left] + arr[right];
+        if(sum === 0) return [arr[left],arr[right]];
+        else if(sum>0) right--;
+        else left++;
+    }
+}
+// TIME COMPLEXITY: O(N)
+// SPACE COMPLEXITY: O(1)
+
+console.log(sumZero([-4,-3,-2,-1,0,1,2,5]))

@@ -106,7 +106,7 @@ function doubleArr(arr) {
 
 //ANSWER
 
-//now solving this by using devise the plan
+// now solving this by using devise the plan
 // 1. Do you understand the problem? Yes
 // 2. input types? two strings
 // 3. output type? boolean
@@ -152,7 +152,7 @@ const validAnagram = (str1, str2) => {
 console.log(validAnagram("ab", "aba"));
 
 
-//Analyzing the SOLUTION 1:
+// Analyzing the SOLUTION 1:
 // 1. Poor Time complexity: O(N square) because of for loop and indexOf method inside for loop -> O(n*n)
 // 2. created arrays which occupies more space.
 // 3. for loop can be replaced with forEach/for in loop to improve the syntax
