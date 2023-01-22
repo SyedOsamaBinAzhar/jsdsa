@@ -109,24 +109,65 @@
 // averagePair([],4) // false
 
 //SOLUTION:
-function averagePair(arr, num) {
-  let left = 0;
-  let right = arr.length - 1;
-  let flag = false;
-  if (arr.length === 0) return flag;
+// function averagePair(arr, num) {
+//   let left = 0;
+//   let right = arr.length - 1;
+//   let flag = false;
+//   if (arr.length === 0) return flag;
 
-  while (left < right) {
-    let avg = (arr[left] + arr[right]) / 2;
-    if(avg === num){
-        return flag=true;
-    } else if(avg>num){
-        right--;
-    } else {
-        left++;
-    }
-  }
+//   while (left < right) {
+//     let avg = (arr[left] + arr[right]) / 2;
+//     if(avg === num){
+//         return flag=true;
+//     } else if(avg>num){
+//         right--;
+//     } else {
+//         left++;
+//     }
+//   }
 
-  return false;
-}
+//   return false;
+// }
 
-console.log(averagePair([-1,0,3,4,5,6], 4.1));
+// console.log(averagePair([-1,0,3,4,5,6], 4.1));
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// QUESTION:4
+
+// Multiple Pointers - isSubsequence
+// Write a function called isSubsequence which takes in two strings and checks whether the characters in the first string 
+// form a subsequence of the characters in the second string. In other words, the function should check whether the 
+// characters in the first string appear somewhere in the second string, without their order changing.
+
+// Examples:
+// isSubsequence('hello', 'hello world'); // true
+// isSubsequence('sing', 'sting'); // true
+// isSubsequence('abc', 'abracadabra'); // true
+// isSubsequence('abc', 'acb'); // false (order matters)
+// Your solution MUST have AT LEAST the following complexities:
+// Time Complexity - O(N + M)
+// Space Complexity - O(1)
+
+//SOLUTION:1
+// isSubsequence Solution - Iterative
+// function isSubsequence(str1, str2) {
+//   var i = 0;
+//   var j = 0;
+//   if (!str1) return true;
+//   while (j < str2.length) {
+//     if (str2[j] === str1[i]) i++;
+//     if (i === str1.length) return true;
+//     j++;
+//   }
+//   return false;
+// }
+
+//SOLUTION:2
+// isSubsequence Solution - Recursive but not O(1) Space
+// function isSubsequence(str1, str2) {
+//   if (str1.length === 0) return true;
+//   if (str2.length === 0) return false;
+//   if (str2[0] === str1[0]) return isSubsequence(str1.slice(1), str2.slice(1));
+//   return isSubsequence(str1, str2.slice(1));
+// }
