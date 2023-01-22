@@ -94,8 +94,8 @@
 
 // QUESTION:3
 // Multiple Pointers - averagePair
-// Write a function called averagePair. Given a sorted array of integers and a target average, determine 
-// if there is a pair of values in the array where the average of the pair equals the target average. 
+// Write a function called averagePair. Given a sorted array of integers and a target average, determine
+// if there is a pair of values in the array where the average of the pair equals the target average.
 // There may be more than one pair that matches the average target.
 
 // Bonus Constraints:
@@ -109,6 +109,24 @@
 // averagePair([],4) // false
 
 //SOLUTION:
-function averagePair(){
-    
+function averagePair(arr, num) {
+  let left = 0;
+  let right = arr.length - 1;
+  let flag = false;
+  if (arr.length === 0) return flag;
+
+  while (left < right) {
+    let avg = (arr[left] + arr[right]) / 2;
+    if(avg === num){
+        return flag=true;
+    } else if(avg>num){
+        right--;
+    } else {
+        left++;
+    }
+  }
+
+  return false;
 }
+
+console.log(averagePair([-1,0,3,4,5,6], 4.1));
