@@ -130,19 +130,9 @@ function power(base, pow) {
   let answer = 1;
   let count = 0;
 
-  const helper = () => {
-
-  }
-
+  const helper = () => {};
 
   helper();
-
-
-
-
-
-
-
 
   // if(pow === 0){
   //     return 1;
@@ -162,3 +152,4 @@ function power(base, pow) {
 console.log(power(3, 2));
 
 ///////////////////////////////////////////////////////////////////////////////////////////
+
