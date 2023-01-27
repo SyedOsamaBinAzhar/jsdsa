@@ -52,4 +52,8 @@ function binarySearch(arr, elem) {
 
 binarySearch([2,5,6,9,13,15,28,30], 103)
 
+// TIME COMPLEXITY: 
+// Worst and Avg case: O(log n) -> in iterations -> if 16 elements -> log 16 = 2*2*2*2 = 16 -> then TC = 4 cos four 2s.
+// Best Case: O(1) -> in case the middle element matches the element to be found.
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
