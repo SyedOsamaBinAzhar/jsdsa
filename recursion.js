@@ -102,54 +102,25 @@
 // power(2,2) // 4
 // power(2,4) // 16
 
-//SOLUTION: A
-// let answer = 1;
-// let count = 0;
-// function power(base,pow){
-//     // answer = base;
-//     if(pow === 0){
-//         return 1;
-//     } else if(pow === 1){
-//         return base
-//     } else {
-//         if(count === pow){
-//             return answer;
-//         } else {
-//             answer = answer * base;
-//             count++;
-//             return power(base,pow)
-//         }
-//     }
+// SOLUTION: 
+// function power(base, exp) {
+//   if (exp == 0) return 1;
+//   else if (exp == 1) return base;
+//   else {
+//     let count = 1;
+//     let answer = 1;
+//     const helper = () => {
+//       answer = answer * base;
+//       if (count < exp) {
+//         count++;
+//         helper(base, exp);
+//       }
+//     };
+
+//     helper();
+//     return answer
+//   }
 // }
 
-// console.log(power(3,2))
-
-// SOLUTION: B
-
-function power(base, pow) {
-  let answer = 1;
-  let count = 0;
-
-  const helper = () => {};
-
-  helper();
-
-  // if(pow === 0){
-  //     return 1;
-  // } else if(pow === 1){
-  //     return base
-  // } else {
-  //     if(count === pow){
-  //         return answer;
-  //     } else {
-  //         answer = answer * base;
-  //         count++;
-  //         return power(base,pow)
-  //     }
-  // }
-}
-
-console.log(power(3, 2));
-
+// console.log(power(2, 4))
 ///////////////////////////////////////////////////////////////////////////////////////////
-
