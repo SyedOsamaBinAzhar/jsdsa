@@ -102,7 +102,7 @@
 // power(2,2) // 4
 // power(2,4) // 16
 
-// SOLUTION: 
+// SOLUTION:
 // function power(base, exp) {
 //   if (exp == 0) return 1;
 //   else if (exp == 1) return base;
@@ -124,3 +124,22 @@
 
 // console.log(power(2, 4))
 ///////////////////////////////////////////////////////////////////////////////////////////
+
+// QUESTION: factorial
+// function factorial(num) {
+//   if (num == 0) return 1;
+//   let answer = 1;
+//   function helper() {
+//     console.log("helper");
+//     answer = answer * num;
+//     if (num > 1) {
+//       num--;
+//       helper(num);
+//     }
+//   }
+//   helper();
+
+//   return answer;
+// }
+
+// console.log(factorial(5));
