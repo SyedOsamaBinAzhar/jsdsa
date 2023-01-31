@@ -48,25 +48,25 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // CLASS METHODS: use static keyword
-class Point {
-  constructor(x, y) {
-    this.x = x;
-    this.y = y;
-  }
+// class Point {
+//   constructor(x, y) {
+//     this.x = x;
+//     this.y = y;
+//   }
 
-  //this method is not tied to any instance p1 and p2 because it is a utility method and it should be used with p1,p2...pn both
-  //thats why declared with static keyword
-  static distance(a, b) {
-    const dx = a.x - b.x;
-    const dy = a.y - b.y;
+//   //this method is not tied to any instance p1 and p2 because it is a utility method and it should be used with p1,p2...pn both
+//   //thats why declared with static keyword
+//   static distance(a, b) {
+//     const dx = a.x - b.x;
+//     const dy = a.y - b.y;
 
-    return Math.hypot(dx, dy);
-  }
-}
+//     return Math.hypot(dx, dy);
+//   }
+// }
 
-const p1 = new Point(5, 5);
-const p2 = new Point(10, 10);
+// const p1 = new Point(5, 5);
+// const p2 = new Point(10, 10);
 //distance is accessed by className.methodName because it is static.
-console.log(Point.distance(p1, p2)); // 7.0710678118654755
+// console.log(Point.distance(p1, p2)); // 7.0710678118654755
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
