@@ -26,7 +26,7 @@ class SinglyLinkedList{
     }
 }
 
-var list = new SinglyLinkedList()
+// var list = new SinglyLinkedList()
 // console.log(list)
 // console.log(list.push("HELLO"))
 // console.log(list.push("WORLD"))
