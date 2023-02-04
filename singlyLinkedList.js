@@ -1,4 +1,4 @@
-node of a linked list
+// node of a linked list
 class Node{
     constructor(val){
         this.val = val;
